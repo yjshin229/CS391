@@ -1,0 +1,45 @@
+/* Styles for the header with ID 'main-header' */
+#main-header h1 {
+  text-align: center;
+  /* other styles */
+}
+
+/* Styles for the navigation with class 'main-nav' */
+.main-nav {
+  /* styles for navigation bar */
+  background-color: aqua;
+}
+
+/* Styles for navigation list items */
+.main-nav li {
+  border: 1px solid #000; /* Example: 1px solid black border */
+  background-color: #f0f0f0; /* Example: light grey background */
+  padding: 5px 10px; /* Add some padding for visual spacing */
+  margin: 2px; /* Optional: add a little space between items */
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav li {
+  display: block; /* default horizontal layout */
+  width: 30%;
+}
+
+/* Responsive styles */
+@media (max-width: 750px) {
+  /* Styles for screens 750px wide or smaller */
+  .main-nav li {
+    display: inline-block; /* vertical layout for smaller screens */
+  }
+}
+
+@media (min-width: 751px) {
+  /* Styles for screens larger than 750px */
+  #main-header h1 {
+    text-align: left;
+  }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="age-restricted.css" />
+    <title>Age check</title>
+    <script>
+      function checkAge() {
+        var inputAge = document.getElementById("input").value;
+        var altOutput = document.getElementById("alt-output");
+        var mainOutput = document.getElementById("main-output");
+
+        altOutput.innerHTML = "";
+
+        if (isNaN(inputAge)) {
+          altOutput.innerHTML = `<p>The input is not a number.</p>`;
+        } else if (inputAge < 0) {
+          altOutput.innerHTML = `<p>Negative number is not acceptable.</p>`;
+        } else if (!Number.isInteger(parseFloat(inputAge))) {
+          // Decimal number
+          altOutput.innerHTML = `<p>The input is not a valid age (decimal number).</p>`;
+        } else if (inputAge >= 18 && inputAge <= 120) {
+          mainOutput.style.display = "block";
+          altOutput.style.display = "none";
+        } else {
+          altOutput.innerHTML = `<p>You may not see the content.</p>`;
+        }
+        altOutput.style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    <input id="input" />
+    <button onclick="checkAge()">Submit</button>
+    <div id="main-output">
+      <img src="jiujitsu.jpeg" alt="Picture of myself." width="500px" />
+      <p>This is me in my jiujitsu gear.</p>
+    </div>
+    <div id="alt-output"></div>
+  </body>
+</html>

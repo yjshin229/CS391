@@ -1,0 +1,16 @@
+img tag stands alone. has 2 attributes. 
+jpeg,png,gif,svg is the only formats that are supported in web browsers.
+jpeg -> easily modified in terms of size
+svg -> infinitely scalable resolution. ideal for logos, icons and illustrations...
+gif -> ideal for small animations that has less than 256 colors
+
+video, audio tags are no more likely used in web browsers. Bad compatibility.
+iframe is used instead. 
+
+img tags don't occupy the entire width of the screen. (inline elements)
+ex)<img>, <a>, <strong>, <em>, <td>, <th>
+
+block level elements : ex)<p>, <ul>, <ol>, <li>, <table>, <tr>, <h1> ... <h6>, <hr>
+
+Don't OVER USE DIV tag. IF there is an alternative, use the other ones.
+overusing the div tag kills the search engines ability. 
