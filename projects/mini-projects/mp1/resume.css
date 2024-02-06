@@ -100,13 +100,28 @@ footer {
 
 /* calculator styling*/
 #calculator-div {
-  width: 20rem;
   align-self: center;
   align-content: center;
   border: 4px dotted skyblue;
   border-radius: 5px;
-  padding: 20px;
-  margin-bottom: 25px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+#inputs-div {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  border-color: skyblue;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus {
+  border: 2px solid deepskyblue;
+  outline: none;
 }
 
 .calc-button {
@@ -114,11 +129,98 @@ footer {
   border: none;
   border-radius: 10px;
   color: white;
-  padding: 0.5rem 1.5rem;
-  font-size: calc(12px + 0.5vw);
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+.reset-button {
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+@media (min-height: 501px) {
+  #calculator-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+  }
+
+  #buttons-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calc-button {
+    padding: 0.5rem 1.5rem;
+    font-size: calc(12px + 0.5vw);
+    margin-bottom: 1rem;
+  }
+
+  .reset-button {
+    padding: 0.5rem 1.5rem;
+    font-size: calc(12px + 0.5vw);
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-height: 500px) {
+  #calculator-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #buttons-div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+  }
+
+  #operations-div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+  }
+
+  #answer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #answer-container h3 {
+    margin-left: 1rem;
+  }
+
+  .calc-button {
+    padding: 0.2rem 1rem;
+    font-size: calc(12px + 0.5vw);
+    margin-right: 3px;
+  }
+
+  .reset-button {
+    padding: 0.3rem 1rem;
+    font-size: calc(10px + 0.5vw);
+  }
 }
 
 /* Styles for screens larger than 750px */

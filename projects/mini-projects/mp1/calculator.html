@@ -31,24 +31,32 @@
       <main>
         <h2>Calculator</h2>
         <div id="calculator-div">
-          <label>First Number:</label>
-          <input type="text" id="first-number" />
-          <br />
-          <br />
-          <label>Second Number:</label>
-          <input type="text" id="second-number" />
+            <div id="input-container">
+                <div id="inputs-div">
+                    <label>First Number:</label>
+                    <input type="text" id="first-number" />
+                    <label>Second Number:</label>
+                    <input type="text" id="second-number" />
+                </div>
+                
+                <div id="operations-div">
+                    <p>Operations:</p>
+                    <div id="buttons-div">
+                        <button class="calc-button" onclick="addition()">+</button>
+                        <button class="calc-button" onclick="subtraction()">-</button>
+                        <button class="calc-button" onclick="multiplication()">*</button>
+                        <button class="calc-button" onclick="division()">/</button>
+                        <button class="calc-button" onclick="power()">**</button>
+                    </div>
+                </div>
+            </div>
 
-          <p>Operations:</p>
-          <button class= "calc-button" onclick="addition()">+</button>
-          <button class= "calc-button" onclick="subtraction()">-</button>
-          <button class= "calc-button" onclick="multiplication()">*</button>
-          <button class= "calc-button" onclick="division()">/</button>
-          <button class= "calc-button" onclick="power()">**</button>
+            <div id="answer-container">
+                <p>Answer:</p>
+                <h3 id="output">&#160</h3>
 
-          <p>Answer:</p>
-          <h3 id="output">&#160</h3>
-
-          <button class= "calc-button" onclick="clearFields()">Reset</button>
+            </div>
+            <button class="reset-button" onclick="clearFields()">Reset</button>
         </div>
       </main>
     </div>
