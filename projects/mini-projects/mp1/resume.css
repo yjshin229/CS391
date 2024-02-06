@@ -98,6 +98,29 @@ footer {
   margin-left: 20px;
 }
 
+/* calculator styling*/
+#calculator-div {
+  width: 20rem;
+  align-self: center;
+  align-content: center;
+  border: 4px dotted skyblue;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.calc-button {
+  background-color: deepskyblue;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  font-size: calc(12px + 0.5vw);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
 /* Styles for screens larger than 750px */
 @media (min-width: 751px) {
   .main-nav {
@@ -166,7 +189,6 @@ footer {
   header,
   main,
   footer {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;
   }
 }
