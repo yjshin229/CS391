@@ -1,0 +1,134 @@
+/* Base styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box; /* Ensures padding does not affect overall width */
+}
+
+#main-header {
+  background-color: lightblue;
+}
+
+#main-header h1,
+#main-header p,
+footer p {
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0px;
+  background-color: skyblue;
+}
+
+.main-nav ul li {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.main-nav ul :hover {
+  background-color: deepskyblue;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.container main {
+  padding: 0px 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: honeydew;
+}
+
+.container main h2 {
+  color: deepskyblue;
+}
+
+/* Styles for screens larger than 750px */
+@media (min-width: 751px) {
+  .main-nav {
+    flex-basis: 30%;
+    min-width: 200px;
+    background-color: skyblue;
+  }
+
+  .main-nav ul {
+    padding-inline: 10px;
+  }
+
+  .main-nav ul li {
+    margin-bottom: 10px;
+  }
+
+  .container main {
+    flex-grow: 1;
+  }
+
+  #main-header,
+  #main-header h1,
+  #main-header p {
+    text-align: left;
+  }
+}
+
+/* Styles for screens 750px or smaller */
+@media (max-width: 750px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .main-nav,
+  .container main {
+    width: 100%;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .main-nav ul li {
+    display: inline;
+  }
+
+  #main-header,
+  #main-header h1,
+  #main-header p {
+    text-align: center;
+  }
+}
+
+footer {
+  background-color: lightblue;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 750px) {
+  body {
+    margin: 0;
+  }
+
+  header,
+  main,
+  footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
