@@ -1,9 +1,9 @@
 # Dependencies
-/node_modules/
+node_modules/
 
 # Production build folder
-/dist/
-/build/
+dist/
+build/
 
 # Environment files
 .env
@@ -13,7 +13,7 @@
 .env.production.local
 
 # IDEs and editors
-/.idea/
+.idea/
 .vscode/
 *.swp
 *.swo
