@@ -10,7 +10,7 @@ const NavBar = ({ title }) => {
 export default NavBar;
 
 const StyledNav = styled.nav`
-  background-color: darkturquoise;
+  background-color: #df8321;
   padding: 0rem 2rem;
 `;
 
