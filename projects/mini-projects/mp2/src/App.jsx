@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import { styled } from "styled-components";
 import axios from "axios";
 import CatList from "./components/CatList";
+import CatFact from "./components/CatFact";
 
 function App() {
   useEffect(() => {
@@ -21,7 +22,7 @@ function App() {
   return (
     <StyledContainer>
       <NavBar title={"Cat Facts"} />
-      <StyledSubHeader>Fun Facts</StyledSubHeader>
+      <CatFact />
       <CatList />
     </StyledContainer>
   );

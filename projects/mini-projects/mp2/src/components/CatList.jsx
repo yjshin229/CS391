@@ -8,19 +8,7 @@ const CatList = () => {
 
   useEffect(() => {
     getInfo();
-    // getFacts();
   }, []);
-
-  const getFacts = () => {
-    axios
-      .get("https://catfact.ninja/fact")
-      .then((response) => {
-        setFacts([...facts, response.data.fact]);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
 
   const getInfo = () => {
     axios
@@ -46,12 +34,18 @@ const CatList = () => {
             </StyledWhiteBox>
             <StyledInfoContainer>
               <StyledInfoTitle>Breed: </StyledInfoTitle>
-              <span>{item.breeds[0].name}</span>
+              <span>
+                {item.breeds[0]?.name ? item.breeds[0]?.name : "Unknown"}
+              </span>
             </StyledInfoContainer>
 
             <StyledInfoTitle>Description:</StyledInfoTitle>
             <StyledDescription>
-              <span>{item.breeds[0].description}</span>
+              <span>
+                {item.breeds[0]?.description
+                  ? item.breeds[0]?.description
+                  : "N/A"}
+              </span>
             </StyledDescription>
           </div>
         ))}
@@ -70,7 +64,7 @@ const CatList = () => {
 export default CatList;
 
 const StyledContainer = styled.div`
-  background-color: grey;
+  background-color: #cdcdcd;
   padding: 1rem 1rem;
 `;
 
@@ -78,7 +72,8 @@ const StyledGrid = styled.div`
   display: grid;
   place-items: center;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  row-gap: 2rem;
+  column-gap: 1rem;
   justify-content: center;
   align-items: center;
   height: auto;
@@ -97,8 +92,8 @@ const StyledGrid = styled.div`
 const StyledImg = styled.img`
   top: 0;
   left: 0;
-  object-fit: cover;
-  height: 100%;
+  object-fit: contain;
+  width: 100%;
   display: flex;
   align-items: center;
 `;
@@ -111,6 +106,7 @@ const StyledWhiteBox = styled.div`
   overflow: hidden;
   justify-content: center;
   align-items: center;
+  border-radius: 0.5rem;
 `;
 
 const StyledInfoContainer = styled.p`
@@ -123,7 +119,7 @@ const StyledInfoTitle = styled.span`
 `;
 
 const StyledDescription = styled.div`
-  height: 8rem;
+  height: 5.5rem;
   width: 18rem;
   overflow: scroll;
   margin-top: 1rem;
