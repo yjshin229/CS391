@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import Loading from "./Loading";
 
 const CatList = () => {
-  const [facts, setFacts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
@@ -18,6 +19,7 @@ const CatList = () => {
       .then((response) => {
         console.log(response.data);
         setInfo(response.data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error(error);
@@ -55,8 +57,14 @@ const CatList = () => {
 
   return (
     <StyledContainer>
-      <StyledHeader>Cats</StyledHeader>
-      {renderInfo(info)}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <StyledHeader>Cats 🐈</StyledHeader>
+          {renderInfo(info)}
+        </>
+      )}
     </StyledContainer>
   );
 };
@@ -77,6 +85,7 @@ const StyledGrid = styled.div`
   justify-content: center;
   align-items: center;
   height: auto;
+  margin: 2rem 0rem;
   @media screen and (max-width: 930px) {
     grid-template-columns: 1fr 1fr;
     width: auto;

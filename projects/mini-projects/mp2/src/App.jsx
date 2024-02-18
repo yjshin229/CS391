@@ -34,9 +34,5 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-`;
-
-const StyledSubHeader = styled.h2`
-  font-family: "Protest Guerrilla", sans-serif;
-  padding: 0rem 1rem;
+  background-color: #cdcdcd;
 `;

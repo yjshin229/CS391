@@ -33,6 +33,7 @@ const StyledFactContainer = styled.div`
   display: flex;
   padding: 0rem 2rem;
   align-items: center;
+  background-color: white;
 `;
 
 const StyledFunFact = styled.h2`
