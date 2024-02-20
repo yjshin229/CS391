@@ -39,4 +39,5 @@ const StyledFactContainer = styled.div`
 const StyledFunFact = styled.h2`
   font-family: "Protest Guerrilla", sans-serif;
   margin-right: 1rem;
+  white-space: nowrap;
 `;
