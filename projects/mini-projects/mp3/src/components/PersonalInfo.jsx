@@ -3,11 +3,10 @@ import styled from "styled-components";
 const PersonalInfo = () => {
   return (
     <StyledContainer>
+      <StyledTitle>About Me</StyledTitle>
       <p>HElloooo</p>
       <p>HElloooo</p>
       <p>HElloooo</p>
-
-      <span>HElloooo</span>
     </StyledContainer>
   );
 };
@@ -21,4 +20,8 @@ const StyledContainer = styled.div`
   justify-self: center;
   align-items: center;
   justify-content: center;
+`;
+
+const StyledTitle = styled.h3`
+  font-family: "Kode Mono", monospace;
 `;
