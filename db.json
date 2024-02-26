@@ -1,12 +1,11 @@
 {
-  "Personal Info": 
-    {
-      "name": "Youngjin Shin"
-      "location": "Boston",
-      "email": "yjshin29@bu.edu"
-      "phone": "(857)-408-0288",
-      "github": "www.github.com/yjshin229"
-    },
+  "Personal Info": {
+    "name": "Youngjin Shin",
+    "location": "Boston",
+    "email": "yjshin29@bu.edu",
+    "phone": "(857)-408-0288",
+    "github": "www.github.com/yjshin229"
+  },
   "comments": [
     {
       "id": 1,
