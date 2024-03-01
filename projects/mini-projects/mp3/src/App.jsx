@@ -15,7 +15,6 @@ function App() {
           <Route path="/" Component={MainScreen} />
           <Route path="/projects" Component={ProjectScreen} />
         </Routes>
-        {/* <PersonalInfo /> */}
       </StyledContainer>
     </>
   );
