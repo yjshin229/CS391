@@ -6,19 +6,39 @@
     "phone": "(857)-408-0288",
     "github": "www.github.com/yjshin229"
   },
-  "comments": [
+  "projects": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "title": "TikiTaka",
+      "body": {
+        "techStack": [
+          "React, ReactNative, Uvicorn, FastAPI, MySQL, Amazon S3, Swagger, Grafana, Prometheus, Docker, Nginx, Amazon Lightsail"
+        ],
+        "language": ["JavaScript, Python"]
+      },
+      "github": "https://github.com/SV22-TikiTaka",
+      "article": "https://medium.com/@yjshin229/2022-summer-bootcamp-d1d2a0c13828"
     },
     {
       "id": 2,
-      "body": "some comment",
-      "postId": 1
+      "title": "Blossom",
+      "body": {
+        "techStack": [
+          "React, Flask, GUnicorn, MySQL, Amazon S3, Amazon EC2, Amazon RDS, RabbitMQ, Celery, Swagger, Redis, Pytorch, Grafana, Prometheus, Docker, Nginx, Amazon Lightsail"
+        ],
+        "language": ["JavaScript, Python"]
+      },
+      "github": "https://github.com/SiliconValley22-Blossom",
+      "article": "https://medium.com/@yjshin229/silicon-valley-summer22-bootcamp-colorize-your-photos-with-ai-blossom-9a46898d429b"
+    },
+    {
+      "id": 3,
+      "title": "TaskTerriers",
+      "body": {
+        "techStack": ["ReactNative, .Net, Firebase, Firestore, Jira"],
+        "language": ["Typescript, C#"]
+      },
+      "github": "https://github.com/Task-Terriers"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
