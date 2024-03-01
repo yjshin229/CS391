@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import myPic from "../assets/YoungjinShin.png";
 
 const PersonalInfo = () => {
   const [data, setData] = useState();
@@ -21,7 +22,6 @@ const PersonalInfo = () => {
   };
 
   const renderInfo = () => {
-    console.log(data);
     if (!data) {
       return <></>;
     }
@@ -45,7 +45,7 @@ const PersonalInfo = () => {
         </p>
         <p>
           <span>Location: </span>
-          <span>{data.boston}</span>
+          <span>{data.location}</span>
         </p>
       </StyledInfoContainer>
     );
@@ -53,11 +53,10 @@ const PersonalInfo = () => {
 
   return (
     <StyledContainer>
-      <StyledTitle>About Me</StyledTitle>
-      <img src="./assets/document.png" alt="Profile Picture" />
-      <p>HElloooo</p>
-      <p>HElloooo</p>
-      <p>HElloooo</p>
+      <h2>About Me</h2>
+      <StyledPicContainer>
+        <StyledPicture src={myPic} alt="Profile Picture" />
+      </StyledPicContainer>
       {renderInfo()}
     </StyledContainer>
   );
@@ -72,12 +71,28 @@ const StyledContainer = styled.div`
   justify-content: center;
 `;
 
-const StyledTitle = styled.h3`
-  font-family: "Kode Mono", monospace;
-`;
-
 const StyledInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  font-family: "Kode Mono", monospace;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: #faf0af;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+`;
+
+const StyledPicContainer = styled.div`
+  display: flex;
+  overflow: hidden;
+  border-radius: 100rem;
+  height: 10rem;
+  width: 10rem;
+  margin-top: 1rem;
+`;
+
+const StyledPicture = styled.img`
+  object-fit: cover;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 `;

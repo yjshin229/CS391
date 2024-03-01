@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
 const Header = () => {
   return (
     <StyledDiv>
-      <StyledText>Youngjin Shin's Portfolio 👾</StyledText>
+      <Link to={"/"} style={{ textDecoration: "none" }}>
+        <StyledText>Youngjin Shin's Portfolio 👾</StyledText>
+      </Link>
     </StyledDiv>
   );
 };
