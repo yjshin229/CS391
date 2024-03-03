@@ -12,8 +12,8 @@ function App() {
       <Header />
       <StyledContainer>
         <Routes>
-          <Route path="/" Component={MainScreen} />
-          <Route path="/projects" Component={ProjectScreen} />
+          <Route path="/" element={<MainScreen />} />
+          <Route path="/projects" element={<ProjectScreen />} />
         </Routes>
       </StyledContainer>
     </>
