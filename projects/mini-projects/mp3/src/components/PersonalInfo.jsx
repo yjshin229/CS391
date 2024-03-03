@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import myPic from "../assets/YoungjinShin.png";
 
 const PersonalInfo = () => {
   const [data, setData] = useState();
@@ -51,25 +50,9 @@ const PersonalInfo = () => {
     );
   };
 
-  return (
-    <StyledContainer>
-      <h2>About Me</h2>
-      <StyledPicContainer>
-        <StyledPicture src={myPic} alt="Profile Picture" />
-      </StyledPicContainer>
-      {renderInfo()}
-    </StyledContainer>
-  );
+  return renderInfo();
 };
 export default PersonalInfo;
-
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  align-items: center;
-  justify-content: center;
-`;
 
 const StyledInfoContainer = styled.div`
   display: flex;
@@ -79,20 +62,4 @@ const StyledInfoContainer = styled.div`
   border-color: #faf0af;
   padding: 1rem 2rem;
   margin-top: 1rem;
-`;
-
-const StyledPicContainer = styled.div`
-  display: flex;
-  overflow: hidden;
-  border-radius: 100rem;
-  height: 10rem;
-  width: 10rem;
-  margin-top: 1rem;
-`;
-
-const StyledPicture = styled.img`
-  object-fit: cover;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
 `;

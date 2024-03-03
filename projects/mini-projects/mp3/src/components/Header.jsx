@@ -13,7 +13,7 @@ const Header = () => {
         </Link>
         <TiThMenuOutline
           size={24}
-          onClick={() => [setIsMenuOpen(!isMenuOpen), console.log(isMenuOpen)]}
+          onClick={() => [setIsMenuOpen(!isMenuOpen)]}
         />
       </StyledDiv>
       <Menu isOpen={isMenuOpen} />
