@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   base:
     process.env.NODE_ENV === "production"
-      ? "/cs391/projects/mini-projects/mp3/dist/"
-      : "",
+      ? "yjshin229/cs391/projects/mini-projects/mp3/dist/"
+      : "/",
 });

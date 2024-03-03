@@ -6,7 +6,7 @@ import App from "./App";
 // const basename = process.env.PUBLIC_URL;
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "*",
     element: <App />,
   },
 ]);
