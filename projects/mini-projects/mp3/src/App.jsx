@@ -12,7 +12,7 @@ function App() {
       <Header />
       <StyledContainer>
         <Routes>
-          <Route path="/" Component={MainScreen} />
+          <Route path="*" Component={MainScreen} />
           <Route path="/projects" Component={ProjectScreen} />
         </Routes>
       </StyledContainer>
