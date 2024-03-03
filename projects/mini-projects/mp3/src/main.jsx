@@ -3,15 +3,13 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "*",
-      Component: App,
-    },
-  ],
-  { basename: "/yjshin29/cs391/projects/mini-projects/mp3/dist" }
-);
+// const basename = process.env.PUBLIC_URL;
+const router = createBrowserRouter([
+  {
+    path: "*",
+    Component: App,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
