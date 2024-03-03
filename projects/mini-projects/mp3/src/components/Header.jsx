@@ -5,29 +5,28 @@ import { useState } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   return (
     <>
       <StyledDiv>
         <Link to={"/"} style={{ textDecoration: "none" }}>
           <StyledText>Youngjin Shin's Portfolio 👾</StyledText>
         </Link>
-        <TiThMenuOutline
-          size={24}
-          onClick={() => [setIsMenuOpen(!isMenuOpen)]}
-        />
+        <TiThMenuOutline size={24} onClick={toggleMenu} />
       </StyledDiv>
-      <Menu isOpen={isMenuOpen} />
+      <Menu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </>
   );
 };
 
-const Menu = ({ isOpen }) => {
+const Menu = ({ isOpen, toggleMenu }) => {
   return (
     <StyledMenuContainer style={{ display: isOpen ? "flex" : "none" }}>
-      <StyledMenu>
+      <StyledMenu onClick={toggleMenu}>
         <StyledLink to={"/"}>Home</StyledLink>
       </StyledMenu>
-      <StyledMenu>
+      <StyledMenu onClick={toggleMenu}>
         <StyledLink to={"/projects"}>Projects</StyledLink>
       </StyledMenu>
     </StyledMenuContainer>
