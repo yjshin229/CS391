@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import { TiThMenuOutline } from "react-icons/ti";
 import { useState } from "react";
+import { basePath } from "../App";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,10 +25,10 @@ const Menu = ({ isOpen, toggleMenu }) => {
   return (
     <StyledMenuContainer style={{ display: isOpen ? "flex" : "none" }}>
       <StyledMenu onClick={toggleMenu}>
-        <StyledLink to={"/"}>Home</StyledLink>
+        <StyledLink to={`${basePath}/`}>Home</StyledLink>
       </StyledMenu>
       <StyledMenu onClick={toggleMenu}>
-        <StyledLink to={"/projects"}>Projects</StyledLink>
+        <StyledLink to={`${basePath}/projects`}>Projects</StyledLink>
       </StyledMenu>
     </StyledMenuContainer>
   );

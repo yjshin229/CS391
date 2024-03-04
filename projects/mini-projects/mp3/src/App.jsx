@@ -1,10 +1,13 @@
-import { useState } from "react";
 import Header from "./components/Header";
 import { styled } from "styled-components";
-import PersonalInfo from "./components/PersonalInfo";
 import { Route, Routes } from "react-router-dom";
 import ProjectScreen from "./screens/ProjectScreen";
 import MainScreen from "./screens/MainScreen";
+
+export const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/cs391/projects/mini-projects/mp3/dist"
+    : "";
 
 function App() {
   return (
@@ -12,8 +15,8 @@ function App() {
       <Header />
       <StyledContainer>
         <Routes>
-          <Route path="/" element={<MainScreen />} />
-          <Route path="/projects" element={<ProjectScreen />} />
+          <Route path={`${basePath}/`} element={<MainScreen />} />
+          <Route path={`${basePath}/projects`} element={<ProjectScreen />} />
         </Routes>
       </StyledContainer>
     </>
