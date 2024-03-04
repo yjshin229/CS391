@@ -5,9 +5,12 @@ import { basePath } from "./App";
 import App from "./App";
 
 // const basename = process.env.PUBLIC_URL;
+
+const path =
+  process.env.NODE_ENV === "production" ? `${basePath}/` : `${basePath}*`;
 const router = createBrowserRouter([
   {
-    path: `${basePath}*`,
+    path: path,
     element: <App />,
   },
 ]);
