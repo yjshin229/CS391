@@ -13,7 +13,6 @@ const PersonalInfo = () => {
       const info = await axios.get(
         "https://my-json-server.typicode.com/yjshin229/cs391/personalInfo"
       );
-      console.log(info.data);
       setData(info.data);
     } catch (error) {
       console.error(error);
