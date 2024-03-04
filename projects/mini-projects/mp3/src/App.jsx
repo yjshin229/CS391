@@ -6,7 +6,7 @@ import MainScreen from "./screens/MainScreen";
 
 export const basePath =
   process.env.NODE_ENV === "production"
-    ? "/cs391/projects/mini-projects/mp3/dist"
+    ? "/yjshin29/cs391/projects/mini-projects/mp3/dist"
     : "";
 
 function App() {
