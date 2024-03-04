@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <>
       <StyledDiv>
-        <Link to={"/"} style={{ textDecoration: "none" }}>
+        <Link to={`${basePath}/`} style={{ textDecoration: "none" }}>
           <StyledText>Youngjin Shin's Portfolio 👾</StyledText>
         </Link>
         <TiThMenuOutline size={24} onClick={toggleMenu} />
