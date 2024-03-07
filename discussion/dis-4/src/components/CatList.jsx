@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import useSWR from "swr";
-import axios from "axios";
 
 const CatList = () => {
   const API = `https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&api_key=live_hhf1mfp2yu3wpI5d5IU8hsWGL6SAxN9Uid7qL54ZV18CafjLoEtXq4K5FtWh0FLN`;
