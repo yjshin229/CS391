@@ -1,17 +1,27 @@
-import { Exo_2 } from "next/font/google";
+import Header from "@/components/Header";
 import styled from "styled-components";
+import { getServerSideProps as getServerSidePropsQuestions } from "../pages/api/questions";
+import Questions from "../components/Questions";
 
-const exo_2 = Exo_2({ subsets: ["latin"] });
+export function getServerSideProps(context) {
+  return getServerSidePropsQuestions(context);
+}
 
-export default function Home() {
+export default function Home(props) {
   return (
-    <div>
-      <StyledHeader>HIHI</StyledHeader>
-      <StyledHeader>HIHI</StyledHeader>
-    </div>
+    <>
+      <Header />
+      <Questions {...props} />
+    </>
   );
 }
 
-const StyledHeader = styled.h1`
-  background-color: greenyellow;
+const QuestionContainer = styled.div`
+  font-family: "Kode Mono", monospace;
+  display: flex;
+  flex-direction: column;
+  margin-inline: calc(5vw);
+  margin-block: calc(2vh);
+  background-color: red;
+  height: 100vh;
 `;
