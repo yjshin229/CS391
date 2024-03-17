@@ -31,5 +31,5 @@ const HeaderContainer = styled.div`
 const HeaderTitle = styled.h1`
   color: white;
   font-family: "Kode Mono", monospace;
-  font-size: calc(2vw + 2vh);
+  font-size: calc(4vw);
 `;

@@ -7,7 +7,7 @@ export const UnixToDate = (unixTimestamp) => {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
-    hour12: false, // Optional: Use this line if you prefer 24-hour format
+    hour12: false,
   };
   return date.toLocaleString("en-US", options);
 };

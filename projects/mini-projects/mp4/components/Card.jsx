@@ -1,5 +1,6 @@
 import { UnixToDate } from "@/utils/DateTimeConverter";
 import { styled } from "styled-components";
+
 const Card = ({
   id,
   title,
@@ -37,12 +38,17 @@ const StyledContainer = styled.div`
   width: auto;
   background-color: #ceed77;
   border-radius: 12px;
-  margin-bottom: 1rem;
+  margin-bottom: calc(1rem + 1vw);
   padding: 1rem;
 `;
 const CardHeaderFooter = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 const DisplayName = styled.span`
@@ -60,13 +66,14 @@ const QuestionTitle = styled.h3`
 
 const TagContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
 const Tags = styled.div`
   background-color: #e7f6be;
   border-radius: 12px;
   padding: 0.5rem;
   font-size: x-small;
-  margin-right: 1rem;
 `;
 
 const Count = styled.span`

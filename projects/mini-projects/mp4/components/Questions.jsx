@@ -6,7 +6,7 @@ import Pagination from "./Pagination";
 const Questions = ({ questions, hasMore, page }) => {
   return (
     <QuestionContainer>
-      <h2>Questions</h2>
+      <StyledTitle>Questions</StyledTitle>
       {questions.map((question) => (
         <CardLink
           href={`/questions/${question.question_id}`}
@@ -43,6 +43,10 @@ const QuestionContainer = styled.div`
   flex-direction: column;
   margin-inline: calc(5vw);
   margin-block: calc(2vh);
-  /* background-color: red; */
-  /* height: 100vh; */
+`;
+
+const StyledTitle = styled.h2`
+  @media (max-width: 450px) {
+    align-self: center;
+  }
 `;
