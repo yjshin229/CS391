@@ -9,5 +9,5 @@ export const UnixToDate = (unixTimestamp) => {
     second: "2-digit",
     hour12: false,
   };
-  return date.toLocaleString("en-US", options);
+  return date.toUTCString("en-US", options);
 };

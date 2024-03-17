@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Card from "./Card";
+import QuestionCard from "../../components/QuestionCard";
 import Link from "next/link";
-import Pagination from "./Pagination";
+import Pagination from "../../components/Pagination";
 
 const Questions = ({ questions, hasMore, page }) => {
   return (
@@ -13,7 +13,7 @@ const Questions = ({ questions, hasMore, page }) => {
           key={question.question_id}
           passHref
         >
-          <Card
+          <QuestionCard
             id={question.question_id}
             title={question.title}
             views={question.view_count}
@@ -22,6 +22,8 @@ const Questions = ({ questions, hasMore, page }) => {
             tags={question.tags}
             date={question.creation_date}
             answers={question.answer_count}
+            isAnswered={question.is_answered}
+            isRelatedQuestion={false}
           />
         </CardLink>
       ))}
