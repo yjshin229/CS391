@@ -7,8 +7,6 @@ export async function getServerSideProps(context) {
     }order=desc&sort=hot&tagged=reactjs&site=stackoverflow`
   );
   const result = await data.json();
-
-  console.log(result.items);
   return {
     props: {
       questions: result.items,

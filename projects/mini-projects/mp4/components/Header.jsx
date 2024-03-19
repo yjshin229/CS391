@@ -14,13 +14,11 @@ const Header = ({ title, isDetailedPage }) => {
         />
       </Head>
       <HeaderContainer>
-        {/* {isDetailedPage && (
-          <Link href={"/"} passHref>
-            <BackButton>
-              <MdArrowBackIos size={"4vw"} />
-            </BackButton>
-          </Link>
-        )} */}
+        {isDetailedPage && (
+          <BackButton href="/">
+            <MdArrowBackIos size={"4vw"} />
+          </BackButton>
+        )}
 
         <HeaderTitle isDetailedPage={isDetailedPage}>{title}</HeaderTitle>
       </HeaderContainer>
@@ -42,8 +40,8 @@ const HeaderContainer = styled.div`
 const BackButton = styled.a`
   position: absolute;
   left: 2rem;
-  display: flex;
-  align-items: center; /* Align the icon vertically */
+  justify-self: start;
+  color: black;
   cursor: pointer;
 `;
 
