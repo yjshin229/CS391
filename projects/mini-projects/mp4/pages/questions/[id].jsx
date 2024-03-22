@@ -22,6 +22,7 @@ const QuestionDetail = () => {
           `https://api.stackexchange.com/2.2/questions/${id}?site=stackoverflow`
         );
         const questionData = await questionResponse.json();
+        console.log(questionData);
 
         // Fetch related questions
         const relatedResponse = await fetch(

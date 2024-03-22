@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import styled from "styled-components";
 import { getServerSideProps as getServerSidePropsQuestions } from "./questions/getQuestions";
 import Questions from "./questions/Questions";
 

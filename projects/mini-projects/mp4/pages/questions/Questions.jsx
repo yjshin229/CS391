@@ -2,12 +2,13 @@ import styled from "styled-components";
 import QuestionCard from "../../components/QuestionCard";
 import Link from "next/link";
 import Pagination from "../../components/Pagination";
+import PropTypes from "prop-types";
 
 const Questions = ({ questions, hasMore, page }) => {
   return (
     <QuestionContainer>
       <StyledTitle>Questions</StyledTitle>
-      {questions.map((question) => (
+      {questions?.map((question) => (
         <CardLink
           href={`/questions/${question.question_id}`}
           key={question.question_id}
@@ -33,6 +34,12 @@ const Questions = ({ questions, hasMore, page }) => {
 };
 
 export default Questions;
+
+Questions.propTypes = {
+  questions: PropTypes.any,
+  hasMore: PropTypes.bool || null,
+  page: PropTypes.number,
+};
 
 const CardLink = styled(Link)`
   text-decoration: none;

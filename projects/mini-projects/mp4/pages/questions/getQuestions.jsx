@@ -7,10 +7,12 @@ export async function getServerSideProps(context) {
     }order=desc&sort=hot&tagged=reactjs&site=stackoverflow`
   );
   const result = await data.json();
+  console.log(data);
+  if (!result) console.log("AHHH");
   return {
     props: {
-      questions: result.items,
-      hasMore: result.has_more,
+      questions: result.items || null,
+      hasMore: result.has_more || null,
       page: page || 1,
     },
   };

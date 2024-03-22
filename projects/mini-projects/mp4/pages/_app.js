@@ -1,4 +1,6 @@
 import { createGlobalStyle } from "styled-components";
+import PropTypes from "prop-types";
+import { AppProps } from "next/app";
 const GlobalStyle = createGlobalStyle`
 body{
   margin: 0;
@@ -15,3 +17,8 @@ export default function MyApp({ Component, pageProps }) {
     </>
   );
 }
+
+MyApp.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  pageProps: PropTypes.any,
+};

@@ -1,5 +1,6 @@
 import { UnixToDate } from "@/utils/DateTimeConverter";
 import { styled } from "styled-components";
+import PropTypes from "prop-types";
 
 const QuestionCard = ({
   id,
@@ -40,6 +41,19 @@ const QuestionCard = ({
 };
 
 export default QuestionCard;
+
+QuestionCard.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  views: PropTypes.number,
+  displayName: PropTypes.string,
+  ownerRep: PropTypes.number,
+  tags: PropTypes.array,
+  answers: PropTypes.number,
+  date: PropTypes.instanceOf(Date),
+  isAnswered: PropTypes.bool,
+  isRelatedQuestion: PropTypes.bool,
+};
 
 const StyledContainer = styled.div`
   width: auto;
