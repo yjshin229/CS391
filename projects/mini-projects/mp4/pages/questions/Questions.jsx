@@ -4,10 +4,11 @@ import Link from "next/link";
 import Pagination from "../../components/Pagination";
 import PropTypes from "prop-types";
 
-const Questions = ({ questions, hasMore, page }) => {
+const Questions = ({ questions, hasMore, page, isError }) => {
   return (
     <QuestionContainer>
       <StyledTitle>Questions</StyledTitle>
+      {isError && <p>ErrorStatus : {isError}</p>}
       {questions?.map((question) => (
         <CardLink
           href={`/questions/${question.question_id}`}
@@ -39,6 +40,7 @@ Questions.propTypes = {
   questions: PropTypes.any,
   hasMore: PropTypes.bool || null,
   page: PropTypes.number,
+  isError: PropTypes.number || null,
 };
 
 const CardLink = styled(Link)`
