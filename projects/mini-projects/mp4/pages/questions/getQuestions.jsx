@@ -1,18 +1,11 @@
 export async function getServerSideProps(context) {
   const { page } = context.query;
-
-  // const data = await fetch(
-  //   `https://api.stackexchange.com/2.2/questions?${
-  //     page ? `page=${page}&` : ""
-  //   }order=desc&sort=hot&tagged=reactjs&site=stackoverflow`
-  // );
   try {
     const data = await fetch(
       `https://api.stackexchange.com/2.2/questions?${
         page ? `page=${page}&` : ""
       }order=desc&sort=hot&tagged=reactjs&site=stackoverflow`
     );
-    console.log("data---------------------------\n", data);
     const result = await data.json();
     return {
       props: {
