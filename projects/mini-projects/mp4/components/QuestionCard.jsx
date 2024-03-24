@@ -50,7 +50,7 @@ QuestionCard.propTypes = {
   ownerRep: PropTypes.number,
   tags: PropTypes.array,
   answers: PropTypes.number,
-  date: PropTypes.instanceOf(Date),
+  date: PropTypes.number,
   isAnswered: PropTypes.bool,
   isRelatedQuestion: PropTypes.bool,
 };
