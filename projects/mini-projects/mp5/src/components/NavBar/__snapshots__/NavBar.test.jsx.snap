@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Rendering test > The NavBar component should render 1`] = `
+<div
+  className="sc-guDLey gtpvTe"
+>
+  <h2
+    className="sc-dmyCSP jbzSYl"
+  />
+</div>
+`;
+
+exports[`The NavBar component should render 1`] = `
+<div
+  className="sc-guDLey gtpvTe"
+>
+  <h2
+    className="sc-dmyCSP jbzSYl"
+  />
+</div>
+`;
