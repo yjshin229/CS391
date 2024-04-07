@@ -1,3 +1,48 @@
+import fs from "fs/promises";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+async function loadFixture(fixturePath) {
+  const filePath = path.join(__dirname, "fixtures", fixturePath);
+  const fileContent = await fs.readFile(filePath, "utf-8");
+  return JSON.parse(fileContent); // Assuming JSON format for your fixtures
+}
+
+describe("WebdriverIO", () => {
+  beforeEach(async () => {
+    // Load fixture data
+    const hotelsData = await loadFixture("../fixtures/hotels.json");
+    const hotelData = await loadFixture("../fixtures/hotel.json");
+
+    // Mocking the network requests
+    const hotelsMock = await browser.mock(
+      "**/PacktPublishing/React-Projects-Second-Edition/hotels",
+      {
+        method: "get",
+      }
+    );
+    await hotelsMock.respond(hotelsData);
+
+    const hotelMock = await browser.mock(
+      "**/PacktPublishing/React-Projects-Second-Edition/hotels/*",
+      {
+        method: "get",
+      }
+    );
+    await hotelMock.respond(hotelData);
+
+    const reviewsMock = await browser.mock(
+      "**/PacktPublishing/React-Projects-Second-Edition/hotels/*/reviews",
+      {
+        method: "get",
+      }
+    );
+    await reviewsMock.respond([]);
+  });
+});
+
 describe("E2E Tests for Hotels App", () => {
   it("opens the app and clicks on the first hotel", async () => {
     await browser.url("http://localhost:3000");
