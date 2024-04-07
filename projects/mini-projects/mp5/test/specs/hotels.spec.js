@@ -7,7 +7,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 async function loadFixture(fixturePath) {
   const filePath = path.join(__dirname, "fixtures", fixturePath);
   const fileContent = await fs.readFile(filePath, "utf-8");
-  return JSON.parse(fileContent); // Assuming JSON format for your fixtures
+
+  return JSON.parse(fileContent);
 }
 
 describe("WebdriverIO", () => {
