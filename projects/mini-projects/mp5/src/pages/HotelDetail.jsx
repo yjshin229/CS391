@@ -36,7 +36,7 @@ function HotelDetail() {
         <NavBar
           goBack={() => navigate(-1)}
           openForm={() => navigate(`/hotel/${hotelId}/new`)}
-          title={hotel && hotel.title}
+          title={hotel?.title}
         />
       )}
       {hotel && <HotelItem data={hotel} />}

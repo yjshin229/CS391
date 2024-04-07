@@ -24,7 +24,7 @@ test("The NavBar component should respond to button clicks", () => {
   render(<NavBar goBack={mockFunction} openForm={mockFunction} />);
 
   fireEvent.click(screen.getByText("< Go Back"));
-  expect(mockFunction).toHaveBeenCalled();
+  expect(mockFunction).toHaveBeenCalledOnce();
 
   fireEvent.click(screen.getByText("+ Add Review"));
   expect(mockFunction).toHaveBeenCalledTimes(2);
