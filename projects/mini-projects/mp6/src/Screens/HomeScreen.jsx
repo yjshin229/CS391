@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
-import CustomButton from "../components/Button";
-import { useNavigation } from "@react-navigation/native";
+import CustomButton from "../components/CustomButton";
 
 const HomeScreen = ({ navigation }) => {
   const navigateToGameScreen = () => {
@@ -8,6 +7,7 @@ const HomeScreen = ({ navigation }) => {
   };
   return (
     <View style={styles.homeContainer}>
+      <Text style={styles.welcomeText}>Welcome! Let's play a game!</Text>
       <CustomButton
         title={"Play Game"}
         onPress={navigateToGameScreen}
@@ -24,5 +24,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  welcomeText: {
+    color: "#9f72dd",
+    fontWeight: 600,
+    fontSize: 21,
+    marginBottom: 10,
   },
 });
