@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
     color: "#9f72dd",
     fontWeight: 600,
     fontSize: 21,
-    marginBottom: 10,
+    marginBottom: 20,
   },
 });

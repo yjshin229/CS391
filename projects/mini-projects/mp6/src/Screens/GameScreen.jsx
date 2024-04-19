@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   textInputContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 10,
+    marginBottom: 20,
   },
   displayMessage: {
     fontSize: 21,
