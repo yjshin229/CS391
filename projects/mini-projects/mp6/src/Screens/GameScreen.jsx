@@ -7,6 +7,7 @@ const GameScreen = ({ navigation }) => {
   const [randomNumber, setRandomNumber] = useState();
   const [input, setInput] = useState();
   const [displayMessage, setDisplayMessage] = useState("");
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     getRandomNumber();
@@ -20,12 +21,14 @@ const GameScreen = ({ navigation }) => {
     const guessedNumber = parseInt(input);
     if (guessedNumber === randomNumber) {
       setInput("");
-      return navigation.navigate("ResultScreen");
+      return navigation.navigate("ResultScreen", { score: score });
     } else {
       if (guessedNumber > randomNumber) {
         setDisplayMessage("Too Big. Try again!");
+        setScore(score + 1);
       } else {
         setDisplayMessage("Too small. Try again!");
+        setScore(score + 1);
       }
       renderDisplayMessage();
       return;
@@ -41,18 +44,35 @@ const GameScreen = ({ navigation }) => {
     return <Text style={styles.displayMessage}>{displayMessage}</Text>;
   };
 
+  const renderGameMessage = () => {
+    return (
+      <Text style={styles.gameMessage}>
+        Guess the Number!{"\n"}(Natural Numbers)
+      </Text>
+    );
+  };
+
   return (
     <View style={styles.gameContainer}>
+      {renderGameMessage()}
       {displayMessage !== null && renderDisplayMessage()}
-      <View style={styles.textInputContainer}>
-        <Text style={{ marginRight: 10 }}>Enter a Number: </Text>
-        <CustomTextInput
-          value={input}
-          onChangeText={onChangeText}
-          onFocus={() => setInput("")}
-        />
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        <View style={styles.textInputContainer}>
+          <Text style={{ marginRight: 10 }}>Enter a Number: </Text>
+          <CustomTextInput
+            value={input}
+            onChangeText={onChangeText}
+            onFocus={() => setInput("")}
+          />
+        </View>
+        <CustomButton title={"Guess"} onPress={guessNumber} disabled={!input} />
       </View>
-      <CustomButton title={"Guess"} onPress={guessNumber} disabled={!input} />
     </View>
   );
 };
@@ -63,7 +83,7 @@ const styles = StyleSheet.create({
   gameContainer: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    padding: 20,
   },
 
   textInputContainer: {
@@ -75,5 +95,11 @@ const styles = StyleSheet.create({
     color: "#ff0000",
     fontSize: 21,
     marginBottom: 20,
+  },
+  gameMessage: {
+    color: "#9f72dd",
+    fontWeight: "bold",
+    fontSize: 28,
+    marginBottom: 10,
   },
 });
