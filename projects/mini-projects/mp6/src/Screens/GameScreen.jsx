@@ -24,10 +24,10 @@ const GameScreen = ({ navigation }) => {
       return navigation.navigate("ResultScreen", { score: score });
     } else {
       if (guessedNumber > randomNumber) {
-        setDisplayMessage("Too Big. Try again!");
+        setDisplayMessage("Lower. Try again!");
         setScore(score + 1);
       } else {
-        setDisplayMessage("Too small. Try again!");
+        setDisplayMessage("Higher. Try again!");
         setScore(score + 1);
       }
       renderDisplayMessage();
@@ -41,7 +41,16 @@ const GameScreen = ({ navigation }) => {
   };
 
   const renderDisplayMessage = () => {
-    return <Text style={styles.displayMessage}>{displayMessage}</Text>;
+    return (
+      <Text
+        style={[
+          styles.displayMessage,
+          { color: displayMessage[0] === "L" ? "#ff0000" : "#0000ff" },
+        ]}
+      >
+        {displayMessage}
+      </Text>
+    );
   };
 
   const renderGameMessage = () => {
@@ -92,7 +101,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   displayMessage: {
-    color: "#ff0000",
     fontSize: 21,
     marginBottom: 20,
   },
